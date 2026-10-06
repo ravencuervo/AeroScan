@@ -1,0 +1,38 @@
+services:
+  # Servicio Backend (FastAPI + Scapy + Supabase)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: aeroscan-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - SUPABASE_URL=${SUPABASE_URL:-}
+      - SUPABASE_KEY=${SUPABASE_KEY:-}
+    # Capacidades necesarias para captura de tráfico crudo y herramientas de red WiFi
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    networks:
+      - aeroscan-net
+
+  # Servicio Frontend (React + Vite + Nginx)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: aeroscan-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - aeroscan-net
+
+networks:
+  aeroscan-net:
+    driver: bridge

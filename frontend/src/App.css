@@ -1,1 +1,183 @@
-/* Custom AeroScan CSS if needed */
+/* ==========================================================================
+   AeroScan - App Layout, Sidebar & Header Styles
+   ========================================================================== */
+
+/* Main Layout Shell */
+.app-layout {
+  background-color: #f8f9ff;
+  color: #191c20;
+  min-height: 100vh;
+  display: flex;
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Sidebar */
+.app-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 16rem;
+  border-right: 1px solid #e3e6ef;
+  background-color: #f2f3f9;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-brand-wrapper {
+  height: 4rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e3e6ef;
+}
+
+.sidebar-brand-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1a1d21;
+}
+
+.sidebar-nav-container {
+  padding: 1rem;
+}
+
+.sidebar-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.625rem 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  color: #1a1d21;
+}
+
+.sidebar-nav-item:hover:not(.active) {
+  background-color: rgba(226, 232, 240, 0.6);
+}
+
+.sidebar-nav-item.active {
+  background-color: #239089;
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-nav-icon {
+  font-size: 1.25rem;
+}
+
+/* Main Workspace */
+.app-workspace {
+  padding-left: 16rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Header */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 16rem;
+  right: 0;
+  height: 4rem;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background-color: #239089;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.header-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.breadcrumb-root {
+  color: #ffffff;
+  opacity: 0.9;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.breadcrumb-root:hover {
+  opacity: 1;
+}
+
+.breadcrumb-separator {
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+.breadcrumb-current {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.header-user-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.header-user-avatar:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content Area */
+.app-main-content {
+  position: relative;
+  padding-top: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Placeholder for inactive sections */
+.placeholder-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 16rem;
+  color: #94a3b8;
+  margin-top: 5rem;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.placeholder-text {
+  font-size: 1.125rem;
+}
